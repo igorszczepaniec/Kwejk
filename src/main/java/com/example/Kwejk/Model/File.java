@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class File  {
     private Boolean isFavourite;
     private String isGif;
     private String url;
-
+    private LocalDate localDate = LocalDate.now();
 
 
     @ManyToOne

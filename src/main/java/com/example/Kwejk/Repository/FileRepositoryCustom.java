@@ -9,4 +9,8 @@ public interface FileRepositoryCustom {
     File findByTitle(String title);
     List<File> findByUserId(Integer id);
     List<File> findAllByUserId(Integer id);
+    List<File> findAllByUserEmail(String email);
+
+
+
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Kwejk Clone</title>
+    <title>Collapsible sidebar using Bootstrap 4</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -31,7 +31,7 @@
         </div>
 
         <ul class="list-unstyled components">
-            <p>Welcome</p>
+            <p>Welcome <p th:text="${user.username}"></p></p>
             <li >
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Media <i class="fas fa-film"></i></a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -100,10 +100,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link" href="/registration">Sign In <i class="fas fa-sign-in-alt"></i></a>
+                            <a class="nav-link" href="#">My Account <i class="fas fa-user"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login">Log In <i class="fas fa-key"></i></a>
+                            <a class="nav-link" href="/logout">Log out <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -117,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                   <a th:href="${test.getFileUrl()}"><img class="mainPhotos img-fluid" th:src="${test.url}"></a>
+                    <a th:href="${test.getFileUrl()}"><img class="mainPhotos img-fluid" th:src="${test.url}"></a>
                     <div class="d-flex flex-row">
                         <div class="p-2"><button type="button" class="btn btn-outline-dark"><i class="fas fa-arrow-up"></i></button></div>
                         <div class="p-2"><button type="button" class="btn btn-outline-dark"><i class="fas fa-arrow-down"></i></button></div>
@@ -134,11 +134,11 @@
 
         <ul class="nav nav-pills">
             <li class="nav-item" th:each="i : ${#numbers.sequence(0,test.totalPages-1)}">
-                <a th:href="@{/{pageId}(pageId=${i})}" th:text="${i}" ></a>
+                <a       th:href="@{/{pageId}(pageId=${i})}" th:text="${i}" ></a>
             </li>
         </ul>
 
-</div>
+    </div>
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
